@@ -98,6 +98,7 @@ sub _watch {
     open my $FH, '<&', $dbh->mysql_fd or die "Dup mysql_fd: $!";
     $FH;
   };
+
   Mojo::IOLoop->singleton->reactor->io(
     $self->{handle} => sub {
       my $reactor = shift;
